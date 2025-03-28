@@ -41,7 +41,7 @@
 ---
 
 ## 📂 Structure du Projet
-![image](https://github.com/user-attachments/assets/4aed9ba8-816f-4cd3-8e6e-ae93e644b18f)
+![image](https://github.com/user-attachments/assets/f560ecab-33b7-4cad-a692-7d657350fd7e)
 
 
 ---
