@@ -33,10 +33,13 @@
 ---
 
 ## 🛠️ Technologies Utilisées
-- **Power BI** : Visualisation et analyse des données.
-- **DAX** : Mesures et calculs avancés (ex. : anomalies, moyennes).
-- **Power Query** : Transformation et nettoyage des données.
-- **SQL** (optionnel) : Requêtes pour extraire ou transformer les données.
+Collecte : Python (Meteostat, Pandas), Web Scraping (Jupyter)
+
+Nettoyage/ETL : Power Query, Snowflake (stockage structuré)
+
+Analyse/Visualisation : Power BI, DAX (calculs avancés)
+
+Gestion des données : SQL (optimisation des requêtes)
 
 ---
 
