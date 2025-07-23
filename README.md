@@ -33,19 +33,15 @@
 ---
 
 ## 🛠️ Technologies Utilisées
-Collecte : Python (Meteostat, Pandas), Web Scraping (Jupyter)
-
-Nettoyage/ETL : Power Query, Snowflake (stockage structuré)
-
-Analyse/Visualisation : Power BI, DAX (calculs avancés)
-
-Gestion des données : SQL (optimisation des requêtes)
+- **Collecte** : Python (Meteostat, Pandas), Web Scraping (Jupyter)
+- **Nettoyage/ETL** : Power Query, Snowflake (stockage structuré)
+- **Analyse/Visualisation** : Power BI, DAX (calculs avancés)
+- **Gestion des données** : SQL (optimisation des requêtes)
 
 ---
 
 ## 📂 Structure du Projet
 ![image](https://github.com/user-attachments/assets/f560ecab-33b7-4cad-a692-7d657350fd7e)
-
 
 ---
 
@@ -105,6 +101,7 @@ Voici un aperçu des tableaux de bord interactifs de **ClimatePulse**, chacun d�
     </tr>
   </table>
 </div>
+
 ---
 
 ## 📄 Licence
