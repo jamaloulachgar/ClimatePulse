@@ -1,99 +1,249 @@
 <div align="center">
   <h1>🌦️ ClimatePulse</h1>
-  <p><strong>ClimatePulse</strong> est une solution intelligente de visualisation et d’analyse des données climatiques du Maroc de 2016 à 2025. Ce projet combine tableaux de bord interactifs, intelligence artificielle et architecture cloud moderne pour générer des insights exploitables.</p>
+  <p><strong>ClimatePulse</strong> est un projet de visualisation de données climatiques qui analyse les tendances météorologiques au Maroc de 2016 à 2025. Ce tableau de bord interactif, construit avec Power BI, offre une analyse approfondie des températures, des précipitations et des vents à travers les régions marocaines.</p>
   <img src="docs/Dash Température.JPG" alt="Tableau de Bord Températures" width="600"/>
 </div>
 
 ---
 
 ## 🌍 Aperçu du Projet
-**ClimatePulse** combine des données météorologiques historiques, des traitements avancés, un système IA et des visualisations interactives pour fournir des indicateurs clés aux chercheurs, décideurs, agriculteurs, ou passionnés de climat.
+**ClimatePulse** combine des données climatiques historiques, un traitement avancé des données, et des visualisations interactives pour fournir des insights exploitables sur le climat au Maroc. Ce projet est idéal pour les chercheurs, les décideurs politiques, et les passionnés de données climatiques.
 
 ---
 
+## 📋 Vue d'ensemble
+ClimatePulse est une solution complète d'analyse climatique qui combine :
+- Collecte de données météorologiques du Maroc
+- Stockage dans Snowflake (Data Warehouse)
+- Visualisation via Power BI (Tableaux de bord)
+- Application web interactive avec chatbot IA
+  
 ## 🚀 Fonctionnalités Principales
 
 ### 📥 Collecte et Traitement des Données
-- Extraction des données météorologiques pour les villes marocaines (températures, précipitations, vents).
-- Nettoyage et transformation avec **Python**, **Power Query**, et intégration dans **Snowflake**.
-- Enrichissement avec des métadonnées géographiques (lat/lon, régions).
+- Extraction de données climatiques historiques (températures, précipitations, vents) pour les villes marocaines.
+- Nettoyage et standardisation des données avec **Power BI Power Query**.
+- Enrichissement des données avec des informations géographiques (latitude, longitude, régions).
 
 ### 📊 Visualisation Interactive
-- Tableaux de bord Power BI :
-  - Températures : évolutions annuelles/mensuelles.
-  - Précipitations : top villes pluvieuses.
-  - Vents : rose des vents, vitesses moyennes.
-- Application web **Streamlit** avec graphiques dynamiques et filtres par ville, région, ou période.
+- Tableaux de bord Power BI avec des pages dédiées :
+  - **Températures** : Tendances annuelles et mensuelles par région.
+  - **Précipitations** : Classement des villes les plus pluvieuses, analyses géographiques.
+  - **Vents** : Vitesse moyenne, direction (rose des vents), et distribution.
+- Filtres interactifs pour explorer les données par année, mois, et région.
 
-### 🤖 Chatbot IA Climatique (RAG)
-- **RAG (Retrieval-Augmented Generation)** pour répondre à vos questions climatiques.
-- Modèles LLM utilisés :
-  - [`Mistral-7B`](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1) via [TogetherAI](https://www.together.ai/)
-  - Fallback LLM : [OpenRouter](https://openrouter.ai/)
-- Index vectoriel via **FAISS** et embeddings avec **Sentence Transformers**.
-- Réponses contextualisées à partir des données climatiques indexées.
-- Chatbot intégré dans l’application Streamlit.
+### 🔍 Analyse Avancée
+- Calcul des anomalies climatiques (écarts par rapport à la moyenne).
+- Visualisations géographiques avec des cartes interactives.
+- Classement des villes par précipitations totales.
 
 ---
+
+## 🏗️ Architecture du Projet
+
+### 1. Collecte et Stockage des Données
+- **Source des données** : Données météorologiques du Maroc
+- **Stockage** : 
+  - Snowflake Data Warehouse
+  - Structure optimisée pour l'analyse temporelle
+  - Partitionnement par ville et date
+
+### 2. Analyse et Visualisation
+- **Power BI** :
+  - Tableaux de bord interactifs
+  - KPIs climatiques
+  - Rapports détaillés par ville/région
+- **Application Web Streamlit** :
+  - Visualisations en temps réel
+  - Filtres dynamiques
+  - Graphiques interactifs
+
+### 3. Intelligence Artificielle
+- **Chatbot RAG (Retrieval-Augmented Generation)**
+  - Base de connaissances : données climatiques
+  - LLM : Mistral-7B via TogetherAI
+  - Fallback : OpenRouter pour questions générales
+
 
 ## 🛠️ Technologies Utilisées
 
-| Domaine | Technologies |
-|--------|--------------|
-| Collecte | Python, Pandas, Web Scraping, Meteostat |
-| Stockage | Snowflake (Data Warehouse) |
-| Visualisation | Power BI, Plotly, Streamlit |
-| Backend/API | Flask, Python |
-| IA & RAG | FAISS, Sentence Transformers, Mistral-7B, OpenRouter |
-| DevOps | GitHub, Docker (optionnel), Streamlit Cloud |
+### Backend
+- Python (ETL et API)
+- Flask (Serveur API)
+- Snowflake (Data Warehouse)
+- FAISS (Index vectoriel)
+- Sentence Transformers (Embeddings)
+
+### Frontend
+- Streamlit (Interface web)
+- Plotly (Visualisations)
+- Power BI (Tableaux de bord)
+
+### IA/ML
+- RAG (Retrieval-Augmented Generation)
+- LLMs (Mistral, OpenRouter)
+- Sentence Transformers
+
+---
+## 📈 Roadmap
+
+### Phase 1 : Infrastructure & Données
+- [x] Mise en place Snowflake
+- [x] Schéma de données
+- [x] Pipeline ETL
+- [x] Tests d'intégration
+
+### Phase 2 : Analyse & Visualisation
+- [x] Développement Power BI
+  - [x] KPIs principaux
+  - [x] Tableaux de bord
+  - [x] Rapports automatisés
+- [x] Application Streamlit
+  - [x] Interface utilisateur
+  - [x] Graphiques interactifs
+  - [x] Filtres dynamiques
+
+### Phase 3 : IA & Chatbot
+- [x] Implémentation RAG
+- [x] Intégration LLM
+- [x] Interface chatbot
+- [x] Tests et optimisation
+
+### Phase 4 : Optimisation & Évolution
+- [ ] Amélioration performances
+- [ ] Nouvelles fonctionnalités
+- [ ] Documentation complète
+- [ ] Formation utilisateurs
+## 📂 Structure du Projet
+![image](https://github.com/user-attachments/assets/f560ecab-33b7-4cad-a692-7d657350fd7e)
+
+---
+## 📊 Fonctionnalités Principales
+
+### Analyse Climatique
+- Suivi température/humidité
+- Patterns météorologiques
+- Tendances saisonnières
+- Alertes climatiques
+
+### Visualisation
+- Cartes interactives
+- Graphiques temporels
+- Comparaisons régionales
+- Export de données
+
+### Intelligence Artificielle
+- Questions-réponses IA
+- Analyse prédictive
+- Insights automatisés
+- Assistance utilisateur
+- 
+## 🔍 Fonctionnalités Détaillées
+
+### Extraction et Transformation
+- Nettoyage des données climatiques avec Power Query (suppression des valeurs manquantes, normalisation des formats).
+- Création de colonnes calculées (ex. : `Year`, `MonthName`, `Season`).
+- Enrichissement géographique avec les coordonnées des villes marocaines.
+
+### Visualisation
+- **Page Températures** : Graphiques en courbes pour les tendances annuelles et mensuelles, cartes des températures moyennes par région.
+- **Page Précipitations** : Classement des villes les plus pluvieuses, carte des précipitations, histogramme de distribution.
+- **Page Vents** : Rose des vents pour la direction, histogramme des vitesses de vent et des rafales.
+
+### Analyse
+- Calcul des anomalies de températures et de précipitations (écarts par rapport à la moyenne historique).
+- Classement des villes par précipitations totales (ex. : Tanger, Rabat, Casablanca).
+- Visualisations géographiques pour identifier les régions les plus pluvieuses ou venteuses.
 
 ---
 
-## 🧠 Architecture IA - Chatbot Climat
+## 📊 Résultats & Insights
+- **Classement des Villes Pluvieuses** : Tanger et Rabat dominent avec des précipitations annuelles dépassant 700 mm.
+- **Tendances Climatiques** : Augmentation des températures moyennes dans les régions du sud (ex. : Dakhla-Oued Ed-Dahab).
+- **Vents Dominants** : Les régions côtières comme Agadir montrent des vents dominants de l’ouest (Atlantique).
 
-```mermaid
-graph TD
-  A[Question utilisateur] --> B[Recherche dans FAISS]
-  B --> C[Documents climatiques pertinents]
-  C --> D[Mistral-7B (TogetherAI)]
-  D --> E[Réponse générée]
-📂 Structure du Projet
-📁 climatepulse/
-│
-├── app/
-│   ├── main.py               # Streamlit app
-│   ├── chatbot.py            # Module RAG
-│   └── etl.py                # Scripts de collecte et transformation
-│
-├── dashboards/
-│   ├── powerbi.pbix          # Fichier Power BI
-│   └── screenshots/          # Captures d’écran
-│
-├── data/
-│   └── processed_data.csv    # Données nettoyées
-│
-├── docs/
-│   └── *.JPG                 # Images du tableau de bord
-│
-└── requirements.txt          # Dépendances
+### 📸 Captures d’Écran des Tableaux de Bord
 
-💬 Exemples d’Utilisation du Chatbot IA
-Q : Quelle est la température moyenne à Marrakech en août ?
-R : La température moyenne à Marrakech en août est de 37,2°C, selon les données de 2018–2025.
+Voici un aperçu des tableaux de bord interactifs de **ClimatePulse**, chacun dédié à une analyse spécifique des données climatiques au Maroc.
 
-Q : Quelles régions ont connu une hausse des précipitations ?
-R : Les régions du Nord (Rabat, Tanger) montrent une augmentation des précipitations depuis 2021
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="docs/Accueil.JPG" alt="Tableau de Bord Accueil" width="500" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+        <p><strong>Accueil</strong></p>
+        <p>Page d'accueil offrant une vue d'ensemble des données climatiques avec des indicateurs clés.</p>
+      </td>
+      <td align="center">
+        <img src="docs/Dash Température.JPG" alt="Tableau de Bord Températures" width="500" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+        <p><strong>Températures</strong></p>
+        <p>Analyse des tendances annuelles et mensuelles des températures par région, avec des cartes et des graphiques en courbes.</p>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="docs/dashb précipitation.JPG" alt="Tableau de Bord Précipitations" width="500" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+        <p><strong>Précipitations</strong></p>
+        <p>Classement des villes les plus pluvieuses, carte des précipitations, et histogramme de distribution.</p>
+      </td>
+      <td align="center">
+        <img src="docs/dashb vent.JPG" alt="Tableau de Bord Vents" width="500" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+        <p><strong>Vents</strong></p>
+        <p>Visualisation de la vitesse moyenne, de la direction (rose des vents), et de la distribution des vents.</p>
+      </td>
+    </tr>
+  </table>
+</div>
 
-📸 Captures d’Écran
-<div align="center"> <img src="docs/Accueil.JPG" alt="Accueil" width="500"/> <p><strong>Vue d'ensemble des indicateurs climatiques par région.</strong></p> </div>
-⚙️ Installation & Lancement
-Python 3.8+
-pip install -r requirements.txt
-▶️ Lancer l’application Streamlit avec le chatbot :
-streamlit run app/main.py
-📄 Licence
-Projet sous licence MIT
-👥 Auteur
-Jamal Oulachgar – GitHub • LinkedIn • oulachgarjamal@gmail.com
-<div align="center"> <p>⭐ N'hésitez pas à laisser une étoile si vous trouvez ce projet utile !</p> </div> ```
+---
+## 🚀 Installation et Déploiement
 
+### Prérequis
+```bash
+python 3.8+
+snowflake-connector-python
+streamlit
+plotly
+flask
+sentence-transformers
+```
+
+### Configuration
+1. Cloner le repository
+2. Installer les dépendances
+3. Configurer les variables d'environnement
+4. Lancer l'application
+
+## 👥 Équipe & Contact
+
+### Développement
+- Data Engineering
+- Frontend/Backend
+- IA/ML
+- DevOps
+
+
+## 📄 Licence
+Projet sous licence [MIT](LICENSE).
+
+---
+
+## 👥 Auteurs
+- **Jamal Oulachgar** - Data Analyst - [Profil GitHub](https://github.com/jamaloulachgar)
+
+---
+
+## 📬 Contact
+- 📧 **Email** : [oulachgarjamal@gmail.com](mailto:oulachgarjamal@gmail.com)
+- 🔗 **LinkedIn** : [Jamal Oulachgar](https://www.linkedin.com/in/jamal-oulachgar) *(Ajoute ton lien LinkedIn ici)*
+
+---
+
+## 💡 Dernière Mise à Jour
+Mars 2025
+
+---
+
+<div align="center">
+  <p>⭐ Si ce projet vous a plu, n’hésitez pas à laisser une étoile sur GitHub ! ⭐</p>
+</div>
